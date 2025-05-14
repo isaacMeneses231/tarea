@@ -1,0 +1,20 @@
+/* Estilo para el body */
+body {
+    margin: 20px;
+    font-family: Verdana;
+}
+
+/* Estilo para el textarea */
+textarea {
+    width: 200px;
+}
+
+/* Estilo para el input con name="email" */
+input[name="email"] {
+    background-color: #eeeeee;
+}
+
+/* Estilo múltiple para párrafos y etiquetas label */
+p, label {
+    font-family: Tahoma;
+}
