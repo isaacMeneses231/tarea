@@ -1,0 +1,34 @@
+/* Regla más específica al principio */
+body p {
+    color: green;
+  }
+  
+  body {
+    background-color: black;
+    color: white !important;
+    font-family: Verdana;
+  }
+  
+  h1 {
+    font-family: Arial;
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  div {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  /* Regla para párrafos */
+  p {
+    color: blue;
+  }
+  
+  /* Regla al final para observar la cascada */
+  body {
+    color: red;
+  }
+  
