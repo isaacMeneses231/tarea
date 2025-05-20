@@ -1,0 +1,104 @@
+body {
+    font-family: Indie Flower;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.container div {
+    box-sizing: border-box;
+    min-width: 150px; /* Esto podría interferir con widths muy pequeños, pero lo mantenemos según tu base */
+    padding: 20px;
+}
+
+/* Estilos de color de fondo */
+.c1 {
+    color: black;
+    background-color: #E6EBE0;
+}
+
+.c2 {
+    color: black;
+    background-color: #F4F1BB;
+}
+
+.c3 {
+    color: black;
+    background-color: #9BC1BC;
+}
+
+.c4 {
+    color: black;
+    background-color: #36C9C6;
+    /* Para que los hijos de c4 se comporten como flex items dentro de él */
+    display: flex;
+    flex-wrap: wrap; /* Asegura que los elementos se envuelvan si el ancho de c4 es insuficiente */
+}
+
+.c5 {
+    color: white;
+    background-color: #ED6A5A;
+}
+
+.container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+/* 1. Estilo para móviles (base): todos al 100% */
+/* Aplicamos esto directamente a las clases c1 y c4 (que contiene c2, c3, c5)
+   y a c2, c3, c5 directamente. Esto es para el "apilado". */
+.c1, .c4 { /* c4 es ahora el contenedor principal de c2, c3, c5 */
+    width: 100%;
+}
+.c2, .c3, .c5 { /* Y los elementos dentro de c4, también al 100% de su padre c4 */
+    width: 100%;
+}
+
+/* 2. Estilo para tabletas (min-width: 600px) */
+@media (min-width: 600px) {
+    /* c2, c3, c5 deben ocupar 50% de su padre (c4) */
+    .c2, .c3, .c5 {
+        width: 50%;
+    }
+}
+
+/* 3. Estilo para desktop (min-width: 800px) */
+@media (min-width: 800px) {
+    /* c1 al 100% del container */
+    .c1 {
+        width: 100%;
+    }
+
+    /* c4 también al 100% para que sus hijos c2, c3, c5 tengan espacio */
+    .c4 {
+        width: 100%;
+        /* Aseguramos que c4 también es flex para que sus hijos se organicen */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* c2 al 100% de su padre c4 */
+    .c2 {
+        width: 100%;
+    }
+
+    /* c3, c4 (NO, c4 es el contenedor), c5 al 33.33% de su padre c4 */
+    .c3, .c5 {
+        width: 33.33%; /* Aquí c4 NO aplica, ya que es el contenedor. Solo c3 y c5. */
+    }
+    /* El c2 ya se manejó arriba para desktop al 100% */
+
+    /* El contenedor global se fija a 800px y se centra */
+    .container {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
