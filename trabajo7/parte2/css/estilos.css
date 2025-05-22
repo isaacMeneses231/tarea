@@ -1,0 +1,70 @@
+body {
+    font-family: Verdana;
+    width: 90%;
+    margin-left: 5%;
+  
+}
+
+header {
+    padding: 1vh 1vw;
+    margin-bottom: 1vh;
+ 
+}
+
+#contenido {
+    margin: 1%;
+    text-align: center;
+}
+
+header h1 {
+    padding-left: 1%;
+    font-size: 1.5em;
+}
+
+footer {
+    font-size: 0.8em;
+    border-top: solid 2px #1f47a8;
+    padding-top: 1vw;
+    margin-top: 1vw;
+    text-align: center;
+}
+
+/* Nuevas reglas para imágenes adaptativas según las instrucciones */
+.adaptativa-porcentaje {
+    width: 90%; 
+    max-width: 100%; /* Buena práctica para que no se desborde del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.adaptativa-porcentaje-1 {
+    width: 70%; /* Primer artículo: 70% de ancho */
+    max-width: 100%; /* Evita que la imagen se desborde del contenedor si es muy grande */
+    height: auto; /* Mantiene la proporción */
+}
+
+.adaptativa-porcentaje-2 {
+    width: 50%; /* Segundo artículo: 50% de ancho */
+    max-width: 100%;
+    height: auto;
+}
+
+.adaptativa-porcentaje-3 {
+    width: 20%; /* Tercer artículo: 20% de ancho */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos adicionales para los artículos, para una mejor visualización */
+article {
+    margin-bottom: 20px; /* Espacio entre artículos */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+article img {
+    display: block; /* Para que la imagen ocupe su propia línea y el margin auto funcione */
+    margin: 0 auto; /* Centra la imagen dentro del artículo */
+}

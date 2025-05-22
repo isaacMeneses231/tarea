@@ -1,0 +1,92 @@
+body {
+    font-family: Indie Flower;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex; 
+    flex-flow: row wrap;
+}
+
+/* Estilo general para todos los divs dentro de container */
+.container > div { /* Apunta directamente a los hijos directos de .container */
+    box-sizing: border-box;
+    min-width: 150px; 
+    padding: 20px;
+}
+
+/* Colores de fondo y texto para cada clase */
+.c1 {
+    color: black;
+    background-color: #E6EBE0;
+}
+
+.c2 {
+    color: black;
+    background-color: #F4F1BB;
+}
+
+.c3 {
+    color: black;
+    background-color: #9BC1BC;
+}
+
+.c4 {
+    color: black;
+    background-color: #36C9C6;
+    /* Para que c4 funcione como contenedor flex para c2, c3, c5 */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos dentro de c4 se envuelvan */
+    width: 100%; /* Asegurarse de que c4 ocupe el 100% en móvil */
+}
+
+.c5 {
+    color: white;
+    background-color: #ED6A5A;
+}
+
+
+/* ESTILO PARA MÓVILES (POR DEFECTO - Mobile First) */
+/* Todos los elementos ocupan el 100% del ancho */
+.c1, .c2, .c3, .c4, .c5 {
+    width: 100%;
+}
+
+
+/* ESTILO PARA TABLETAS (min-width: 600px) */
+@media (min-width: 600px) {
+    /* c1 sigue siendo 100% (o el ancho definido por defecto) */
+    /* c4 también es 100% para contener los siguientes */
+    .c2,
+    .c3,
+    .c5 { /* c2, c3, c5 ahora ocupan 50% dentro de su contenedor (c4) */
+        width: 50%;
+    }
+}
+
+
+/* ESTILO PARA DESKTOP (min-width: 800px) */
+@media (min-width: 800px) {
+    .container {
+        width: 800px; /* El contenedor principal se fija a 800px */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .c1 {
+        width: 100%; /* c1 ocupa todo el ancho */
+    }
+
+    /* c4 es el contenedor que aloja a c2, c3, c5. Necesita ser 100% del container. */
+    .c4 {
+        width: 100%; /* c4 ocupa el 100% del contenedor padre (que ahora es 800px) */
+    }
+
+    .c2,
+    .c3,
+    .c5 { /* c2, c3, c5 ocupan 33.33% cada uno dentro de su contenedor (c4) */
+        width: 33.33%;
+    }
+}
